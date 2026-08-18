@@ -2,7 +2,7 @@
 
 TechHealth Inc.'s patient portal was originally built manually through the AWS Console five years ago - undocumented, hard to reproduce, and hard to audit. This project migrates that infrastructure to **AWS CDK (TypeScript)**, replacing manual console configuration with version-controlled, repeatable Infrastructure as Code.
 
-Full write-up (architecture rationale, cost breakdown, security design, lessons learned): see `[TechHealth-Migration-Documentation](docs/ARCHITECTURE.md)` in this repo, or the [Medium post](#).
+Full write-up (architecture rationale, cost breakdown, security design, lessons learned): see [TechHealth-Migration-Documentation](docs/ARCHITECTURE.md) in this repo, or the [Medium post](#).
 
 ## Architecture
 
