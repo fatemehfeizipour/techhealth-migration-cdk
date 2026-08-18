@@ -6,7 +6,7 @@ Architecture, design rationale, cost considerations, security implementations, a
 
 TechHealth Inc.'s patient portal infrastructure was originally built manually through the AWS Console five years ago. This left the environment undocumented, hard to reproduce, and difficult to audit for change history - all significant concerns for a system handling patient data. This project migrates that infrastructure to AWS CDK (TypeScript), replacing manual console configuration with version-controlled, repeatable infrastructure-as-code.
 
-The new design splits infrastructure into four independent CDK stacks — networking, security groups, compute, and database — so each concern can be reasoned about, tested, and changed independently.
+The new design splits infrastructure into four independent CDK stacks - networking, security groups, compute, and database - so each concern can be reasoned about, tested, and changed independently.
 
 ## 2. Architecture Diagram
 
