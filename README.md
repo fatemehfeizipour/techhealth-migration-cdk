@@ -6,7 +6,7 @@ Full write-up (architecture rationale, cost breakdown, security design, lessons 
 
 ## Architecture
 
-![Architecture Diagram](./architecture-diagram.png)
+![Architecture Diagram](./architecture-diagram-techhealth-migration-cdk.png)
 
 - **VPC** across 2 Availability Zones, each with one public subnet and one private *isolated* subnet (no NAT Gateway - the database tier never needs outbound internet access)
 - **EC2** (t3.micro) in the public subnets, running the patient portal web app
