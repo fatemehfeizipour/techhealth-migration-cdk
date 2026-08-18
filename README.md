@@ -67,7 +67,7 @@ aws secretsmanager get-secret-value --secret-id <secret-arn> --query SecretStrin
 mysql -h <rds-endpoint> -u admin -p
 ```
 
-A successful connection confirms EC2-to-RDS connectivity. Attempting the same connection from outside the VPC should fail — confirming network isolation.
+A successful connection confirms EC2-to-RDS connectivity. Attempting the same connection from outside the VPC should fail - confirming network isolation.
 
 ## Tearing down
 
