@@ -1,4 +1,4 @@
-# TechHealth Inc. — Patient Portal Infrastructure Migration to AWS CDK
+# TechHealth Inc. - Patient Portal Infrastructure Migration to AWS CDK
 
 TechHealth Inc.'s patient portal was originally built manually through the AWS Console five years ago — undocumented, hard to reproduce, and hard to audit. This project migrates that infrastructure to **AWS CDK (TypeScript)**, replacing manual console configuration with version-controlled, repeatable Infrastructure as Code.
 
@@ -8,11 +8,11 @@ Full write-up (architecture rationale, cost breakdown, security design, lessons 
 
 ![Architecture Diagram](./architecture-diagram.png)
 
-- **VPC** across 2 Availability Zones, each with one public subnet and one private *isolated* subnet (no NAT Gateway — the database tier never needs outbound internet access)
+- **VPC** across 2 Availability Zones, each with one public subnet and one private *isolated* subnet (no NAT Gateway - the database tier never needs outbound internet access)
 - **EC2** (t3.micro) in the public subnets, running the patient portal web app
 - **RDS MySQL** (db.t3.micro, Multi-AZ) in the private isolated subnets
 - **Security Groups**: the database tier only accepts traffic from the web tier's security group — never from an IP range or the VPC CIDR
-- **IAM + SSM Session Manager** for administrative access to EC2 — no open SSH port, no key pairs to manage
+- **IAM + SSM Session Manager** for administrative access to EC2 - no open SSH port, no key pairs to manage
 - **Secrets Manager** for the database credentials — never hardcoded
 
 ## Project structure
