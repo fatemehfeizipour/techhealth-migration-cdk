@@ -36,6 +36,6 @@ this.rdsSG = new ec2.SecurityGroup(this, 'RDS-SG', {
       this.rdsSG.addIngressRule(
         this.webSG,
         ec2.Port.tcp(3306),
-        'Allow traffic from MySQL from wenSG itself'
+        'Allow traffic from MySQL from webSG itself'
       )
 }}

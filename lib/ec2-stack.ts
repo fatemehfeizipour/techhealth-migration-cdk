@@ -24,7 +24,8 @@ export class EC2Stack extends cdk.Stack {
     const instanceAZa = new ec2.Instance(this, 'MyPublicEc2AZa', {
         vpc: props.vpc,
         vpcSubnets: {
-            subnetType: ec2.SubnetType.PUBLIC
+            subnetType: ec2.SubnetType.PUBLIC,
+            availabilityZones: [props.vpc.availabilityZones[0]],
         },
         machineImage: new ec2.AmazonLinuxImage({
             generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2
@@ -39,7 +40,8 @@ export class EC2Stack extends cdk.Stack {
     const instanceAZb = new ec2.Instance(this, 'MyPublicEc2AZb', {
         vpc: props.vpc,
         vpcSubnets: {
-            subnetType: ec2.SubnetType.PUBLIC
+            subnetType: ec2.SubnetType.PUBLIC,
+            availabilityZones: [props.vpc.availabilityZones[1]],
         },
         machineImage: new ec2.AmazonLinuxImage({
             generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2
