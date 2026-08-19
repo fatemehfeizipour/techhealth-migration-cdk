@@ -84,7 +84,7 @@ Verify in the AWS Console that all resources (VPC, EC2, RDS, security groups, IA
 - **RDS Multi-AZ instead of two independent RDS instances** — same cost as running two separate instances, but with real synchronized failover instead of two disconnected databases
 - **No NAT Gateway** — the isolated private subnet has no internet route at all, which is both cheaper and more secure than a NAT-egress subnet the database doesn't need
 
-RDS encryption at rest — storageEncrypted: true, added after CDK's built-in validation flagged its absence; treated as required given the data involved
+RDS encryption at rest - storageEncrypted: true, added after CDK's built-in validation flagged its absence; treated as required given the data involved
 Bugs caught during deployment
-Both EC2 instances initially landed in the same Availability Zone despite being named AZa/AZb — identical subnetType: PUBLIC selections don't pin an AZ. Fixed with an explicit availabilityZones array per instance, sourced from props.vpc.availabilityZones.
-Amazon Linux 2's default MariaDB client (yum install mariadb) is version 5.5 and can't authenticate against MySQL 8's caching_sha2_password plugin — needed sudo amazon-linux-extras enable mariadb10.5 before installing the client.
+Both EC2 instances initially landed in the same Availability Zone despite being named AZa/AZb - identical subnetType: PUBLIC selections don't pin an AZ. Fixed with an explicit availabilityZones array per instance, sourced from props.vpc.availabilityZones.
+Amazon Linux 2's default MariaDB client (yum install mariadb) is version 5.5 and can't authenticate against MySQL 8's caching_sha2_password plugin - needed sudo amazon-linux-extras enable mariadb10.5 before installing the client.
