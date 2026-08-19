@@ -88,6 +88,6 @@ Resources are deployed only for the duration of testing and destroyed immediatel
 - **CDK's built-in validation flagged `StorageEncrypted` as missing** on the RDS instance - encryption at rest isn't on by default. For a database intended to hold patient data, this was treated as a required fix, not an optional warning: added `storageEncrypted: true` to the `DatabaseInstance` props.
 - **The default MariaDB client on Amazon Linux 2 (`yum install mariadb`) installs version 5.5**, which predates MySQL 8's `caching_sha2_password` authentication plugin and fails to connect with a missing-shared-library error. Fixed by pulling a newer client via `sudo amazon-linux-extras enable mariadb10.5` before installing - a reminder that "install the database client" isn't a one-size-fits-all command across OS/engine version combinations.
 
-    [Walk-through video](https://www.linkedin.com/posts/fatemeh-feyzipour_aws-cdk-infrastructureascode-activity-7495696663903191042-HZpH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOdEekBNejZcME7HcR483AQlDee7t4jnBU)
+[Walk-through video](https://www.linkedin.com/posts/fatemeh-feyzipour_aws-cdk-infrastructureascode-activity-7495696663903191042-HZpH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOdEekBNejZcME7HcR483AQlDee7t4jnBU)
 
-  [Medium Blog](https://medium.com/@fatemehfeizipur/from-console-chaos-to-infrastructure-as-code-migrating-a-healthcare-patient-portal-to-aws-cdk-377e30e6c1c0?sharedUserId=fatemehfeizipur)
+[Medium Blog](https://medium.com/@fatemehfeizipur/from-console-chaos-to-infrastructure-as-code-migrating-a-healthcare-patient-portal-to-aws-cdk-377e30e6c1c0?sharedUserId=fatemehfeizipur)
