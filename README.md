@@ -90,3 +90,7 @@ Verify in the AWS Console that all resources (VPC, EC2, RDS, security groups, IA
 
 - Both EC2 instances initially landed in the same Availability Zone despite being named `AZa`/`AZb` - identical `subnetType: PUBLIC` selections don't pin an AZ. Fixed with an explicit `availabilityZones` array per instance, sourced from `props.vpc.availabilityZones`.
 - Amazon Linux 2's default MariaDB client (`yum install mariadb`) is version 5.5 and can't authenticate against MySQL 8's `caching_sha2_password` plugin - needed `sudo amazon-linux-extras enable mariadb10.5` before installing the client.
+
+  [Walk-through video](https://www.linkedin.com/posts/fatemeh-feyzipour_aws-cdk-infrastructureascode-activity-7495696663903191042-HZpH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADOdEekBNejZcME7HcR483AQlDee7t4jnBU)
+
+  [Medium Blog](https://medium.com/@fatemehfeizipur/from-console-chaos-to-infrastructure-as-code-migrating-a-healthcare-patient-portal-to-aws-cdk-377e30e6c1c0?sharedUserId=fatemehfeizipur)
